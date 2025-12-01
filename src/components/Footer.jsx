@@ -1,5 +1,5 @@
 import { FaLinkedin, FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
-import Finax from "../assets/Finx.png";
+import Finax from "../assets/FinX.png";
 import { FaPhone, FaEnvelope, FaClock } from "react-icons/fa";
 
 
