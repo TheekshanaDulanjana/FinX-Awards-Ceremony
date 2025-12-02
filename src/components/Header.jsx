@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Logo from "../assets/FinX.png";
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -26,14 +27,20 @@ const Header = () => {
   }, [isMenuOpen]);
 
   const scrollToSection = (id) => {
-    navigate("/");
     setIsMenuOpen(false);
-    setTimeout(() => {
+    const hash = `#${id}`;
+
+    if (location.pathname !== "/") {
+      // Navigate to home page with hash
+      navigate(`/${hash}`);
+    } else {
+      // Already on home page: push hash and scroll
+      window.history.pushState(null, "", hash);
       const section = document.getElementById(id);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
-    }, 100);
+    }
   };
 
   const navItems = [
@@ -47,14 +54,14 @@ const Header = () => {
 
   return (
     <>
-      {/* Header - hidden when mobile menu is open */}
+      {/* Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled ? "py-2" : "py-3"
         } ${isMenuOpen ? "hidden lg:flex" : ""}`}
       >
         <div
-          className={` bg-transparent border-white/50 border backdrop-blur-md shadow-md rounded-xl max-w-7xl mx-4 lg:mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${
+          className={`bg-transparent border-white/50 border backdrop-blur-md shadow-md rounded-xl max-w-7xl mx-4 lg:mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${
             isScrolled ? "py-2" : "py-3"
           }`}
         >
@@ -73,7 +80,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-8 xl:space-x-10 text-white font-thin  font-alata">
+          <nav className="hidden lg:flex space-x-8 xl:space-x-10 text-white font-thin font-alata">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -88,7 +95,7 @@ const Header = () => {
           {/* Desktop Download Button */}
           <button
             onClick={() => scrollToSection("download")}
-            className="hidden lg:block bg-[#E29D42] font-alata text-white px-4 xl:px-4 py-2 rounded-md  hover:bg-white hover:text-[#E29D42] cursor-pointer transition-all duration-200 text-sm xl:text-base whitespace-nowrap"
+            className="hidden lg:block bg-[#E29D42] font-alata text-white px-4 xl:px-4 py-2 rounded-md hover:bg-white hover:text-[#E29D42] cursor-pointer transition-all duration-200 text-sm xl:text-base whitespace-nowrap"
           >
             Get Event Pass
           </button>
@@ -108,7 +115,7 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-xs z-40 lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-[#080B1F]/50 backdrop-blur-xs z-40 lg:hidden transition-opacity duration-300 ${
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -123,7 +130,7 @@ const Header = () => {
         }`}
       >
         <div className="flex flex-col h-full">
-          {/* Menu Header (Logo + Close Icon) */}
+          {/* Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-200">
             <img src={Logo} alt="Locum Logo" className="h-6 w-auto" />
             <button
@@ -155,7 +162,7 @@ const Header = () => {
           <div className="p-6 border-t border-gray-200">
             <button
               onClick={() => scrollToSection("download")}
-              className="w-full bg-[#E29D42] font-alata text-white px-6 py-3 rounded-md  hover:bg-white hover:text-[#E29D42] transition-all duration-200 font-medium"
+              className="w-full bg-[#E29D42] font-alata text-white px-6 py-3 rounded-md hover:bg-white hover:text-[#E29D42] transition-all duration-200 font-medium"
             >
               Get Event Pass
             </button>

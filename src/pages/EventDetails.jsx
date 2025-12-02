@@ -8,125 +8,101 @@ import PassImg from "../assets/Pass.jpg";
 const EventDetails = () => {
   return (
     <div
-      className="w-full  py-12 "
+      className="w-full py-12 px-4 md:px-6"
       style={{ backgroundColor: "#080B1F", color: "white" }}
     >
-      {/* Event Details Section */}
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl mt-20 md:text-3xl font-alatsi mb-4" style={{ color: "#E29D42" }}>
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <h2
+          className="text-2xl mt-16 md:mt-20 md:text-3xl font-alatsi mb-4"
+          style={{ color: "#E29D42" }}
+        >
           Event Details
         </h2>
-        <p className="text-white font-alata md:text-xl mb-8">
-         The FinX Awards Ceremony is a premium, invite-only event featuring industry <br />thought leaders, innovators, and top-performing traders. <br />
-         Expect networking opportunities, keynote sessions, and a night dedicated to honoring excellence.
-</p>
 
+        <p className="text-white font-alata text-base md:text-xl leading-relaxed mb-10">
+          The FinX Awards Ceremony is a premium, invite-only event featuring
+          industry thought leaders, innovators, and top-performing traders.
+          Expect networking opportunities, keynote sessions, and a night
+          dedicated to honoring excellence.
+        </p>
 
+        {/* Details Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
-        {/* Details Cards*/}
-        <div className="flex flex-col md:flex-row gap-4 h-56 w-4xl">
+          {/* Card Template Reused */}
+          {[
+            {
+              img: LocationImg,
+              label: "Location",
+              title: "Lotus Tower",
+              sub: "Colombo, Sri Lanka",
+            },
+            {
+              img: DateImg,
+              label: "Date",
+              title: "27th January",
+              sub: "2026",
+            },
+            {
+              img: TimeImg,
+              label: "Time",
+              title: "06.00 PM",
+              sub: "Onwards",
+            },
+            {
+              img: PassImg,
+              label: "Pass",
+              title: "200+",
+              sub: "Limited Pass",
+            },
+          ].map((card, index) => (
+            <div
+              key={index}
+              className="p-4 text-left text-white rounded-xl border relative flex flex-col justify-end h-72 w-56 bg-cover bg-center overflow-hidden"
+              style={{ backgroundImage: `url(${card.img})` }}
+            >
+              {/* Overlay */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: "linear-gradient(to top, #080B1F, transparent)",
+                }}
+              ></div>
 
-          <div
-            className="flex-1 p-4 text-left text-white rounded-xl border relative flex flex-col justify-end h-64 bg-cover bg-center overflow-hidden"
-            style={{
-              backgroundImage: `url(${LocationImg})`,
-            }} >
-
-            {/* Overlay */}
-            <div className="absolute inset-0"
-              style={{
-                background: "linear-gradient(to top, #080B1F, transparent)",
-              }}
-            ></div>
-
-            {/* Text */}
-            <div className="relative z-10">
-              <p className="font-alata">Location</p>
-              <h3 className="font-alatsi text-2xl mt-2 uppercase">Lotus Tower</h3>
-              <p className="font-alata">Colombo, Sri Lanka</p>
+              {/* Text */}
+              <div className="relative z-10">
+                <p className="font-alata">{card.label}</p>
+                <h3 className="font-alatsi text-2xl mt-2 uppercase">
+                  {card.title}
+                </h3>
+                <p className="font-alata">{card.sub}</p>
+              </div>
             </div>
-          </div>
-
-          <div
-            className="flex-1 p-4 text-left text-white rounded-xl border relative flex flex-col justify-end h-64 bg-cover bg-center overflow-hidden"
-            style={{
-              backgroundImage: `url(${DateImg})`,
-            }} >
-
-            {/* Overlay */}
-            <div className="absolute inset-0"
-              style={{
-                background: "linear-gradient(to top, #080B1F, transparent)",
-              }}
-            ></div>
-
-            {/* Text */}
-            <div className="relative z-10">
-              <p className="font-alata">Date</p>
-              <h3 className="font-alatsi text-2xl mt-2 uppercase">27th January</h3>
-              <p className="font-alata">2026</p>
-            </div>
-          </div>
-
-          <div
-            className="flex-1 p-4 text-left text-white rounded-xl border relative flex flex-col justify-end h-64 bg-cover bg-center overflow-hidden"
-            style={{
-              backgroundImage: `url(${TimeImg})`,
-            }} >
-
-            {/* Overlay */}
-            <div className="absolute inset-0"
-              style={{
-                background: "linear-gradient(to top, #080B1F, transparent)",
-              }}
-            ></div>
-
-            {/* Text */}
-            <div className="relative z-10">
-              <p className="font-alata">Time</p>
-              <h3 className="font-alatsi text-2xl mt-2 uppercase">06.00 PM</h3>
-              <p className="font-alata">Onwards</p>
-            </div>
-          </div>
-
-          <div
-            className="flex-1 p-4 text-left text-white rounded-xl border relative flex flex-col justify-end h-64 bg-cover bg-center overflow-hidden"
-            style={{
-              backgroundImage: `url(${PassImg})`,
-            }} >
-
-            {/* Overlay */}
-            <div className="absolute inset-0"
-              style={{
-                background: "linear-gradient(to top, #080B1F, transparent)",
-              }}
-            ></div>
-
-            {/* Text */}
-            <div className="relative z-10">
-              <p className="font-alata">Pass</p>
-              <h3 className="font-alatsi text-2xl mt-2 uppercase">200+</h3>
-              <p className="font-alata">Limited Pass</p>
-            </div>
-          </div>
+          ))}
         </div>
 
-        <div className="flex gap-4 mt-16  relative">
-          <button className="bg-white text-black font-alata px-4 py-2 rounded-md hover:bg-transparent hover:text-white hover:border-white cursor-pointer border transition">
+        {/* Buttons */}
+        <div className="absolute flex flex-col sm:flex-row gap-4 mt-12">
+          <button className="bg-white text-[#080B1F] font-alata px-5 py-2 rounded-md border border-white hover:bg-transparent hover:text-white transition cursor-pointer">
             Get Event Pass
           </button>
 
-          <button className="border border-white text-white font-alata px-4 py-2 rounded-md hover:bg-white hover:text-black cursor-pointer transition">
+          <button className="border border-white text-white font-alata px-5 py-2 rounded-md hover:bg-white hover:text-[#080B1F] transition cursor-pointer">
             Become a Partner
           </button>
         </div>
 
-
-        {/* Banner & Event */}
-         <img src={CityWatermark} alt="CityWatermark" className="w-screen -mt-100 opacity-20" />
-      
+        {/* Watermark */}
+        <div className="md:mt-18 mt-35">
+          <img
+            src={CityWatermark}
+            alt="City Watermark"
+            className="w-full opacity-15 object-cover"
+          />
         </div>
-        </div>
+      </div>
+    </div>
   );
 };
 

@@ -9,9 +9,9 @@ const WhatsappChat = () => {
   return (
     <button
       onClick={openWhatsApp}
-      className="fixed bottom-10 left-10 w-12 h-12 rounded-full bg-[#E29D42] cursor-pointer hover:bg-green-500 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-50"
-    >
-      <FaWhatsapp className="text-2xl" />
+      className="fixed cursor-pointer rounded-full bottom-8 left-10 w-10 h-10 flex items-center justify-center bg-[#E29D42] text-white  transition-transform transform hover:bg-green-500 group z-60 overflow-hidden"
+        >
+      <FaWhatsapp className="text-xl" />
     </button>
   );
 };

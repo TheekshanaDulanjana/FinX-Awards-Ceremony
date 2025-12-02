@@ -4,7 +4,7 @@ import AwardCategory2 from "../components/AwardCategory2";
 import AwardCategory3 from "../components/AwardCategory3";
 
 const Award = () => {
-  const [activeCategory, setActiveCategory] = useState(1); // Default show Category1
+  const [activeCategory, setActiveCategory] = useState(1);
 
   const categories = [
     { id: 1, name: "Award Category 01", component: <AwardCategory1 /> },
@@ -14,36 +14,41 @@ const Award = () => {
 
   return (
     <div
-      className="w-full py-12"
+      className="w-full py-12 px-4 md:px-6"
       style={{ backgroundColor: "#080B1F", color: "white" }}
     >
       <div className="max-w-6xl mx-auto">
+
         {/* Header */}
         <h2
-          className="text-2xl mt-20 md:text-3xl font-alatsi mb-4"
+          className="text-2xl md:text-3xl font-alatsi mt-16 md:mt-20 mb-4"
           style={{ color: "#E29D42" }}
-        > Featured Award Categories
+        >
+          Featured Award Categories
         </h2>
-        <p className="text-white font-alata md:text-xl mb-4">
-          The FinX Awards honor remarkable achievements across the fintech and crypto ecosystem.
-          <br /> Each category highlights individuals and organizations that demonstrate exceptional innovation,
-          <br /> leadership, and impact in shaping the future of digital finance.
+
+        <p className="text-white font-alata text-base md:text-xl leading-relaxed mb-6">
+          The FinX Awards honor remarkable achievements across the fintech
+          and crypto ecosystem. Each category highlights individuals and
+          organizations demonstrating exceptional innovation, leadership,
+          and impact in shaping the future of digital finance.
         </p>
-        <p className="text-white font-alata md:text-xl mb-6">
+
+        <p className="text-white font-alata text-base md:text-xl mb-8">
           Discover our prestigious award categories:
         </p>
 
         {/* Category Buttons */}
-        <div className="flex gap-4 mb-8">
+        <div className="flex flex-wrap gap-3 md:gap-4 mb-8">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`font-semibold px-6 py-2 cursor-pointer rounded-md transition
+              className={`font-semibold cursor-pointer px-5 md:px-6 py-2 rounded-md transition text-sm md:text-base
                 ${
                   activeCategory === cat.id
-                    ? "bg-white text-black border border-white"
-                    : "border border-white cursor-pointer text-white hover:bg-white hover:text-black"
+                    ? "bg-white text-[#080B1F] border border-white"
+                    : "border border-white text-white hover:bg-white hover:text-[#080B1F]"
                 }`}
             >
               {cat.name}
@@ -52,9 +57,14 @@ const Award = () => {
         </div>
 
         {/* Display Active Category */}
-        <div>
+        <div className="w-full">
           {categories.map(
-            (cat) => activeCategory === cat.id && <div key={cat.id}>{cat.component}</div>
+            (cat) =>
+              activeCategory === cat.id && (
+                <div key={cat.id} className="w-full">
+                  {cat.component}
+                </div>
+              )
           )}
         </div>
       </div>
