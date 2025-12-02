@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import HomeVideo from "../assets/home.mp4";
+import FallbackImg from "../assets/fallback.png";
 
 const Home = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const [timeLeft, setTimeLeft] = useState({
     days: "00",
@@ -26,17 +29,9 @@ const Home = () => {
         return;
       }
 
-      const days = String(
-        Math.floor(difference / (1000 * 60 * 60 * 24))
-      ).padStart(2, "0");
-      const hours = String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(
-        2,
-        "0"
-      );
-      const minutes = String(Math.floor((difference / (1000 * 60)) % 60)).padStart(
-        2,
-        "0"
-      );
+      const days = String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, "0");
+      const hours = String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, "0");
+      const minutes = String(Math.floor((difference / (1000 * 60)) % 60)).padStart(2, "0");
       const seconds = String(Math.floor((difference / 1000) % 60)).padStart(2, "0");
 
       setTimeLeft({ days, hours, minutes, seconds });
@@ -45,7 +40,7 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Scroll to hash section if URL has hash
+  // Scroll to hash section
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.substring(1);
@@ -61,21 +56,35 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden">
       <section className="relative flex w-full min-h-screen md:h-[700px] items-center justify-center text-center px-4">
-        {/* Background Video */}
+
+        {/* Fallback Image */}
+        <img
+          src={FallbackImg}
+          alt="Hero Fallback"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+            videoLoaded ? "opacity-0" : "opacity-100"
+          }`}
+        />
+
+        {/* Background Video with fade-in */}
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+            videoLoaded ? "opacity-100" : "opacity-0"
+          }`}
           src={HomeVideo}
           autoPlay
           loop
           muted
+          playsInline
+          onCanPlayThrough={() => setVideoLoaded(true)}
         ></video>
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-linear-to-t from-[#080B1F]/60 to-transparent"></div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-start max-w-4xl w-full mt-20 sm:mt-28 px-2">
-          <h1 className="text-left text-xl sm:text-3xl md:text-6xl font-alatsi text-[#E29D42] leading-tight">
+        <div className="relative z-10 flex flex-col items-start max-w-4xl w-full sm:mt-28 px-2">
+          <h1 className="text-left text-3xl sm:text-3xl md:text-6xl font-alatsi text-[#E29D42] leading-tight">
             Celebrating Excellence in <br />
             Forex & Fintech Innovation!
           </h1>
@@ -89,14 +98,14 @@ const Home = () => {
           <div className="flex flex-wrap gap-4 mt-6">
             <button
               onClick={() => navigate("/nomination")}
-              className="bg-white text-[#080B1F] cursor-pointer font-semibold px-6 py-2 rounded-md hover:bg-transparent hover:text-white hover:border hover:border-white transition"
+              className="w-[150px] h-[48px] bg-white text-[#080B1F] cursor-pointer font-semibold rounded-md hover:bg-transparent hover:text-white hover:border hover:border-white transition"
             >
               Nominate Now
             </button>
 
             <button
               onClick={() => navigate("/allaward")}
-              className="border border-white text-white cursor-pointer font-semibold px-6 py-2 rounded-md hover:bg-white hover:text-[#080B1F] transition"
+              className="w-[150px] h-[48px] border border-white text-white cursor-pointer font-semibold rounded-md hover:bg-white hover:text-[#080B1F] transition"
             >
               Explore Awards
             </button>

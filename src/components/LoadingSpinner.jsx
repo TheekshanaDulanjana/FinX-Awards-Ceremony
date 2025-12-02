@@ -1,4 +1,4 @@
-import Finax from '../assets/FinX.png';
+import Finax from '../assets/FinXLoading.png';
 
 const LoadingSpinner = () => {
   const animationStyle = {

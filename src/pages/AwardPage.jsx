@@ -11,7 +11,7 @@ const AwardPage = () => {
       style={{ backgroundColor: "#080B1F", color: "white" }}
     >
       {/* Awards & Recognitions Section */}
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <h2
           className="text-2xl mt-16 md:mt-20 md:text-3xl font-alatsi mb-4"
           style={{ color: "#E29D42" }}
@@ -37,7 +37,7 @@ const AwardPage = () => {
       </div>
 
       {/* Category 01 */}
-      <div className="max-w-6xl mx-auto mt-12 md:mt-16">
+      <div className="max-w-7xl mx-auto mt-12 md:mt-16">
         <h2
           className="text-xl md:text-2xl font-alatsi mb-4"
           style={{ color: "#E29D42" }}
@@ -53,7 +53,7 @@ const AwardPage = () => {
       </div>
 
       {/* Category 02 */}
-      <div className="max-w-6xl mx-auto mt-16">
+      <div className="max-w-7xl mx-auto mt-16">
         <h2
           className="text-xl md:text-2xl font-alatsi mb-4"
           style={{ color: "#E29D42" }}
@@ -69,7 +69,7 @@ const AwardPage = () => {
       </div>
 
       {/* Category 03 */}
-      <div className="max-w-6xl mx-auto mt-16">
+      <div className="max-w-7xl mx-auto mt-16">
         <h2
           className="text-xl md:text-2xl font-alatsi mb-4"
           style={{ color: "#E29D42" }}
@@ -85,7 +85,7 @@ const AwardPage = () => {
       </div>
 
       {/* Closing Statement */}
-      <div className="max-w-6xl mx-auto mt-16">
+      <div className="max-w-7xl mx-auto mt-16">
         <div className="border-t border-gray-700 pt-10"></div>
 
         <p className="text-white font-alata text-base md:text-lg leading-relaxed mb-8">

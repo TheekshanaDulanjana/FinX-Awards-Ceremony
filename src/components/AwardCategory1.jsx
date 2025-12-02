@@ -75,7 +75,7 @@ export default function AwardCategory1() {
         {awards.slice(0, visibleCount).map((award, idx) => (
           <div
             key={idx}
-            className="w-[355px] h-[241px] shadow-2xl bg-[#535353]/20 outline outline-white text-white rounded-md p-4 flex flex-row"
+            className="w-[400px] h-[241px] shadow-2xl bg-[#535353]/20 outline outline-white text-white rounded-md p-4 flex flex-row"
           >
             {/* Left side */}
             <div className="shrink-0 flex items-center justify-center w-1/3">

@@ -1,8 +1,11 @@
 import { FaLinkedin, FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import Finax from "../assets/FinX.png";
 import { FaPhone, FaEnvelope, FaClock } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
+
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About Us" },
@@ -13,6 +16,10 @@ export default function Footer() {
   ];
 
   const handleScroll = (id) => {
+    if (id === "nomination") {
+      navigate("/nomination");
+      return;
+    }
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -57,16 +64,9 @@ export default function Footer() {
           <h3 className="font-alatsi text-[#E29D42] text-lg mb-3">Award Categories</h3>
           <ul className="space-y-1 text-sm">
             {[
-              "Best Forex Trader in Sri Lanka",
-              "Best Crypto Trader",
-              "Top Female Trader",
-              "Top Young Trader",
-              "Consistent Performer",
-              "Best Risk Manager",
-              "Best Trade of the Contest",
-              "Best Scalper",
-              "Best Swing Trader",
-              "Community Favorite Award"
+              "Awaerd Category 01",
+              "Awaerd Category 02",
+              "Awaerd Category 03"
             ].map((award, idx) => (
               <li key={idx}>{award}</li>
             ))}

@@ -9,7 +9,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Detect scroll for compact header
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -18,7 +17,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
     return () => {
@@ -28,13 +26,17 @@ const Header = () => {
 
   const scrollToSection = (id) => {
     setIsMenuOpen(false);
+
+    if (id === "nomination") {
+      navigate("/nomination");
+      return;
+    }
+
     const hash = `#${id}`;
 
     if (location.pathname !== "/") {
-      // Navigate to home page with hash
       navigate(`/${hash}`);
     } else {
-      // Already on home page: push hash and scroll
       window.history.pushState(null, "", hash);
       const section = document.getElementById(id);
       if (section) {
@@ -47,7 +49,7 @@ const Header = () => {
     { id: "home", label: "Home" },
     { id: "about", label: "About Us" },
     { id: "award", label: "Awards" },
-    { id: "nomination", label: "Nomination" },
+    { id: "nomination", label: "Nomination" }, 
     { id: "event-details", label: "Event Details" },
     { id: "contact", label: "Contact" },
   ];

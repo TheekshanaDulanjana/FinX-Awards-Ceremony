@@ -17,11 +17,11 @@ const Award = () => {
       className="w-full py-12 px-4 md:px-6"
       style={{ backgroundColor: "#080B1F", color: "white" }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         {/* Header */}
         <h2
-          className="text-2xl md:text-3xl font-alatsi mt-16 md:mt-20 mb-4"
+          className="text-2xl md:text-3xl font-alatsi  md:mt-20 mb-4"
           style={{ color: "#E29D42" }}
         >
           Featured Award Categories
@@ -39,7 +39,7 @@ const Award = () => {
         </p>
 
         {/* Category Buttons */}
-        <div className="flex flex-wrap gap-3 md:gap-4 mb-8">
+        <div className="flex flex-wrap gap-3 md:gap-4 mb-8 ">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -47,8 +47,8 @@ const Award = () => {
               className={`font-semibold cursor-pointer px-5 md:px-6 py-2 rounded-md transition text-sm md:text-base
                 ${
                   activeCategory === cat.id
-                    ? "bg-white text-[#080B1F] border border-white"
-                    : "border border-white text-white hover:bg-white hover:text-[#080B1F]"
+                    ? "bg-white text-[#080B1F] border border-white "
+                    : "border border-white  text-white hover:bg-white hover:text-[#080B1F]"
                 }`}
             >
               {cat.name}

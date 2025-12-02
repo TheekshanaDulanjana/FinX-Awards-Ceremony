@@ -14,7 +14,7 @@ const EventDetails = () => {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <h2
-          className="text-2xl mt-16 md:mt-20 md:text-3xl font-alatsi mb-4"
+          className="text-2xl md:mt-20 md:text-3xl font-alatsi mb-4"
           style={{ color: "#E29D42" }}
         >
           Event Details
@@ -28,9 +28,7 @@ const EventDetails = () => {
         </p>
 
         {/* Details Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-
-          {/* Card Template Reused */}
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4 ">
           {[
             {
               img: LocationImg,
@@ -59,7 +57,8 @@ const EventDetails = () => {
           ].map((card, index) => (
             <div
               key={index}
-              className="p-4 text-left text-white rounded-xl border relative flex flex-col justify-end h-72 w-56 bg-cover bg-center overflow-hidden"
+              className="p-4 text-left text-white rounded-xl border relative flex flex-col justify-end 
+              h-50 w-41 sm:h-72 sm:w-56 bg-cover bg-center overflow-hidden"
               style={{ backgroundImage: `url(${card.img})` }}
             >
               {/* Overlay */}
@@ -73,28 +72,28 @@ const EventDetails = () => {
               {/* Text */}
               <div className="relative z-10">
                 <p className="font-alata">{card.label}</p>
-                <h3 className="font-alatsi text-2xl mt-2 uppercase">
+                <h3 className="font-alatsi text-xl md:text-2xl mt-2 uppercase">
                   {card.title}
                 </h3>
-                <p className="font-alata">{card.sub}</p>
+                <p className="font-alata text-sm ">{card.sub}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Buttons */}
-        <div className="absolute flex flex-col sm:flex-row gap-4 mt-12">
-          <button className="bg-white text-[#080B1F] font-alata px-5 py-2 rounded-md border border-white hover:bg-transparent hover:text-white transition cursor-pointer">
+        {/* <div className="absolute flex flex-row sm:flex-row gap-4 mt-12 ">
+          <button className="w-[165px] md:w-[170px] h-[48px] bg-white text-[#080B1F] font-alata px-5 py-2 text-sm md:text-base rounded-md border border-white hover:bg-transparent hover:text-white transition cursor-pointer">
             Get Event Pass
           </button>
 
-          <button className="border border-white text-white font-alata px-5 py-2 rounded-md hover:bg-white hover:text-[#080B1F] transition cursor-pointer">
+          <button className="w-[165px] md:w-[170px] h-[48px] border border-white text-white font-alata px-5 py-2 text-sm md:text-base rounded-md hover:bg-white hover:text-[#080B1F] transition cursor-pointer">
             Become a Partner
           </button>
-        </div>
+        </div> */}
 
         {/* Watermark */}
-        <div className="md:mt-18 mt-35">
+        <div className="md:mt  mt-8">
           <img
             src={CityWatermark}
             alt="City Watermark"

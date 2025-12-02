@@ -10,7 +10,7 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto">
         {/* About Us */}
         <h2
-          className="text-2xl md:text-4xl font-alatsi mt-16 md:mt-20 mb-4"
+          className="text-2xl md:text-4xl font-alatsi  md:mt-20 mb-4"
           style={{ color: "#E29D42" }}
         >
           About Us

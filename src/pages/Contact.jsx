@@ -61,15 +61,15 @@ const ContactPage = () => {
       className="w-full px-4 py-12 md:px-6 lg:px-8"
       style={{ backgroundColor: "#080B1F", color: "white" }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <h2 className="text-2xl md:text-3xl font-alatsi mt-20 mb-4 text-[#E29D42]">
+        <h2 className="text-2xl md:text-3xl font-alatsi md:mt-20 mb-4 text-[#E29D42]">
           Contact Us
         </h2>
 
         <p className="text-white font-alata text-sm sm:text-md md:text-lg leading-relaxed mb-10">
           Have questions about nominations, partnerships, media coverage, or event participation?  
-          Our team is here to assist you with any inquiries related to the FinX Awards Ceremony  
+          <br />Our team is here to assist you with any inquiries related to the FinX Awards Ceremony  
           and our upcoming initiatives.
         </p>
 
