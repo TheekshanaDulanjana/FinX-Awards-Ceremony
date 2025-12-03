@@ -6,11 +6,7 @@ import titleLeft from "../assets/tittle_left.png";
 import titleRight from "../assets/tittle_right.png";
 
 const awards = [
-  {
-    awardImg: award01,
-    title: "Brokers Award ",
-    description: "Honoring exceptional performance, innovation, and market impact."
-  },
+  
   {
     awardImg: award02,
     title: "Most popular Broker",
@@ -22,7 +18,7 @@ const awards = [
     description: "Celebrating leading female talents showing skill, growth, and discipline."
   },
   {
-    awardImg: award03,
+    awardImg: award01,
     title: "Emerging Broker of the Year",
     description: "Highlighting young achievers with remarkable trading skills and potential."
   }
