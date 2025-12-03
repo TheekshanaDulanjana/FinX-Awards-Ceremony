@@ -8,23 +8,18 @@ import titleRight from "../assets/tittle_right.png";
 const awards = [
   {
     awardImg: award01,
-    title: "Award Category 03",
+    title: "Most popular Mentor in Sri Lanka",
     description: "Honoring exceptional performance, innovation, and market impact."
   },
   {
     awardImg: award02,
-    title: "Award Category 03",
+    title: "Best Sri Lankan Payment Solution for Brokers",
     description: "Recognizing groundbreaking strategies and outstanding crypto performance."
   },
   {
     awardImg: award03,
-    title: "Award Category 03",
+    title: "Best Sri Lankan Influencer (Forex/Crypto)",
     description: "Celebrating leading female talents showing skill, growth, and discipline."
-  },
-  {
-    awardImg: award03,
-    title: "Award Category 03",
-    description: "Highlighting young achievers with remarkable trading skills and potential."
   }
 ];
 

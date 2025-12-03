@@ -64,9 +64,9 @@ export default function Footer() {
           <h3 className="font-alatsi text-[#E29D42] text-lg mb-3">Award Categories</h3>
           <ul className="space-y-1 text-sm">
             {[
-              "Awaerd Category 01",
-              "Awaerd Category 02",
-              "Awaerd Category 03"
+              "Traders Award",
+              "Brokers Award",
+              "Support Services"
             ].map((award, idx) => (
               <li key={idx}>{award}</li>
             ))}

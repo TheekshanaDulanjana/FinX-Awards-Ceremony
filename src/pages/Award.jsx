@@ -7,16 +7,16 @@ const Award = () => {
   const [activeCategory, setActiveCategory] = useState(1);
 
   const categories = [
-    { id: 1, name: "Award Category 01", component: <AwardCategory1 /> },
-    { id: 2, name: "Award Category 02", component: <AwardCategory2 /> },
-    { id: 3, name: "Award Category 03", component: <AwardCategory3 /> },
+    { id: 1, name: "Traders Award", component: <AwardCategory1 /> },
+    { id: 2, name: "Brokers Award", component: <AwardCategory2 /> },
+    { id: 3, name: "Support Services", component: <AwardCategory3 /> },
   ];
 
   return (
     <div
       className="w-full py-12 px-4 md:px-6"
       style={{ backgroundColor: "#080B1F", color: "white" }}
-    >
+    > 
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}

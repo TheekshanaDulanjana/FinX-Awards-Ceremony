@@ -42,7 +42,7 @@ const AwardPage = () => {
           className="text-xl md:text-2xl font-alatsi mb-4"
           style={{ color: "#E29D42" }}
         >
-          Category 01: Trading Excellence
+          Category 01: Traders Award
         </h2>
 
         <p className="text-white font-alata text-base md:text-lg mb-8">
@@ -58,7 +58,7 @@ const AwardPage = () => {
           className="text-xl md:text-2xl font-alatsi mb-4"
           style={{ color: "#E29D42" }}
         >
-          Category 02: Innovation & Strategy
+          Category 02: Brokers Award
         </h2>
 
         <p className="text-white font-alata text-base md:text-lg mb-8">
@@ -74,7 +74,7 @@ const AwardPage = () => {
           className="text-xl md:text-2xl font-alatsi mb-4"
           style={{ color: "#E29D42" }}
         >
-          Category 03: Leadership & Influence
+          Category 03: Support Services or Service Providers
         </h2>
 
         <p className="text-white font-alata text-base md:text-lg mb-8">
