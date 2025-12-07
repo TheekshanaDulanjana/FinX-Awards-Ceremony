@@ -1,14 +1,14 @@
 import React from "react";
 import AboutBanner from "../assets/AboutBanner.jpg";
 
-const AboutUs = () => {
+const About = () => {
   return (
     <div
       className="w-full px-4 md:px-6 py-12"
       style={{ backgroundColor: "#080B1F", color: "white" }}
     >
       <div className="max-w-7xl mx-auto">
-        {/* About Us */}
+        {/* About*/}
         <h2
           className="text-2xl md:text-4xl font-alatsi  md:mt-20 mb-4"
           style={{ color: "#E29D42" }}
@@ -105,4 +105,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default About;

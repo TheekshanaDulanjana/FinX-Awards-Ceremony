@@ -263,7 +263,7 @@ const Nomination = () => {
             </button>
 
             {/* Note */}
-            <p className="text-sm text-gray-300 mt-2 text-center">
+            <p className="text-sm text-gray-300 mt-2 text-start">
               All nominations will be reviewed by our advisory panel. Only shortlisted nominees will be contacted for the next stage.
             </p>
           </form>

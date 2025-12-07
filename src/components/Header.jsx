@@ -59,12 +59,12 @@ const Header = () => {
       {/* Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "py-2" : "py-3"
+          isScrolled ? "py-3" : "py-3"
         } ${isMenuOpen ? "hidden lg:flex" : ""}`}
       >
         <div
           className={`bg-transparent border-white/50 border backdrop-blur-md shadow-md rounded-xl max-w-7xl mx-4 lg:mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${
-            isScrolled ? "py-2" : "py-3"
+            isScrolled ? "py-3" : "py-3"
           }`}
         >
           {/* Logo */}
@@ -76,7 +76,7 @@ const Header = () => {
               src={Logo}
               alt="Locum Logo"
               className={`w-auto transition-all duration-300 ${
-                isScrolled ? "h-6" : "h-7"
+                isScrolled ? "h-7" : "h-7"
               }`}
             />
           </div>
@@ -94,12 +94,12 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop Download Button */}
+          {/* Desktop Nominate Button */}
           <button
-            onClick={() => scrollToSection("download")}
+            onClick={() => navigate("/nomination")}
             className="hidden lg:block bg-[#E29D42] font-alata text-white px-4 xl:px-4 py-2 rounded-md hover:bg-white hover:text-[#E29D42] cursor-pointer transition-all duration-200 text-sm xl:text-base whitespace-nowrap"
           >
-            Get Event Pass
+            Nominate Now
           </button>
 
           {/* Mobile Menu Button */}
@@ -163,10 +163,10 @@ const Header = () => {
           {/* Menu Footer */}
           <div className="p-6 border-t border-gray-200">
             <button
-              onClick={() => scrollToSection("download")}
+              onClick={() => navigate("/nomination")}
               className="w-full bg-[#E29D42] font-alata text-white px-6 py-3 rounded-md hover:bg-white hover:text-[#E29D42] transition-all duration-200 font-medium"
             >
-              Get Event Pass
+              Nominate Now
             </button>
           </div>
         </div>
